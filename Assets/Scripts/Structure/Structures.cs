@@ -6,6 +6,7 @@
 	public Rol rol;
 	public string telefono;
 	public int idPM;
+	public static Rol currentRol = Rol.OWNER;
 }
 
 
