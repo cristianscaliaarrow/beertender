@@ -8,7 +8,7 @@ public class Ids{
 
 	}
 
-	public static void ShowRankin(Rol rol){
+	public static void ShowRanking(Rol rol){
 
 	}
 
