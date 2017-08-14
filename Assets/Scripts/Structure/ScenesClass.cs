@@ -6,13 +6,20 @@ using UnityEngine.SceneManagement;
 public class ScenesClass{
 	//change Between rol Type
 	public static void ShowHome(Rol rol){
-        if(rol == Rol.MANAGER || rol == Rol.OWNER)
+        if (rol == Rol.MANAGER || rol == Rol.OWNER)
             SceneManager.LoadScene("HomeOwner");
+        else
+            SceneManager.LoadScene("HomeStaff");
 	}
 
     public static void ShowPremios(Rol rol)
     {
-        SceneManager.LoadScene("PremiosOwner");
+        if (rol == Rol.OWNER)
+            SceneManager.LoadScene("PremiosOwner");
+        else if (rol == Rol.STAFF)
+            SceneManager.LoadScene("PremiosStaff");
+        else
+            SceneManager.LoadScene("PremiosManager");
     }
     //Commons Scenes
 
@@ -21,7 +28,10 @@ public class ScenesClass{
     }
 
 	public static void ShowBeerTender(Rol rol){
-        SceneManager.LoadScene("Beertender");
+        if (rol == Rol.STAFF)
+            SceneManager.LoadScene("BeertenderStaff");
+        else
+            SceneManager.LoadScene("Beertender");
     }
 
 	public static void ShowContacto(Rol rol){
