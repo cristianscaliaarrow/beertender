@@ -25,6 +25,6 @@ public class Login : MonoBehaviour {
 	}
 
 	public bool ExecuteLogin(){
-		return usuario.text.ToLower() == "cristian";
+        return true;//usuario.text.ToLower() == "cristian";
 	}
 }
