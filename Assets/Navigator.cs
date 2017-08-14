@@ -45,6 +45,11 @@ public class Navigator : MonoBehaviour {
 		ScenesClass.ShowContacto(User.currentRol);
 	}
 
+    public void BTN_Home()
+    {
+        ScenesClass.ShowHome(User.currentRol);
+    }
+
 }
 
 

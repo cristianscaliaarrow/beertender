@@ -7,6 +7,7 @@ public class PopUp : MonoBehaviour
 {
     public Text txt;
     public static PopUp instance;
+
     private void Awake()
     {
         instance = this;

@@ -17,7 +17,7 @@ public class Login : MonoBehaviour {
 		bool userOk = ExecuteLogin ();
 
 		if (userOk) {
-			print ("Go To Next Stage!");
+            ScenesClass.ShowHome(type);
 		} else {
 			print ("Pass Bad");
 		}
@@ -25,6 +25,6 @@ public class Login : MonoBehaviour {
 	}
 
 	public bool ExecuteLogin(){
-		return usuario.text.ToLower() == "cristian";
+        return true;//usuario.text.ToLower() == "cristian";
 	}
 }
