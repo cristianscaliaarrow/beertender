@@ -19,7 +19,7 @@ public class DynamicMessage : MonoBehaviour {
             go.transform.localScale = Vector3.one;
             go.GetComponent<Button>().onClick.AddListener(() => ShowPopUpMessage(go.name));
             go.GetComponent<Text>().fontStyle = readed ? FontStyle.Normal : FontStyle.Bold;
-            go.GetComponent<Text>().fontSize = readed ? 32 : 38;
+            go.GetComponent<Text>().color = readed ? Color.gray : Color.white;
         }
 	}
 
