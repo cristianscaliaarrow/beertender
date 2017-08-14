@@ -23,7 +23,6 @@ public class Registros{
 	public string puntosMotivo;
 	public int cant;
 	public int puntos;
-
 }
 
 public class Premios{
@@ -33,6 +32,22 @@ public class Premios{
 	public int puntos;
 	public int catalogoId;
 	public int sku;
+}
+
+public class Message
+{
+    string message;
+    bool readed;
+
+    public Message()
+    {
+
+    }
+
+    public Message(string str)
+    {
+        this.message = str;
+    }
 }
 
 public enum Rol{

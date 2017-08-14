@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class ScenesClass{
 	//change Between rol Type
 	public static void ShowHome(Rol rol){
-        SceneManager.LoadScene("HomeOwner");
+        if(rol == Rol.MANAGER || rol == Rol.OWNER)
+            SceneManager.LoadScene("HomeOwner");
 	}
 
     public static void ShowPremios(Rol rol)
