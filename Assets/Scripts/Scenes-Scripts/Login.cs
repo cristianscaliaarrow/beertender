@@ -17,7 +17,7 @@ public class Login : MonoBehaviour {
 		bool userOk = ExecuteLogin ();
 
 		if (userOk) {
-			print ("Go To Next Stage!");
+            ScenesClass.ShowHome(type);
 		} else {
 			print ("Pass Bad");
 		}
