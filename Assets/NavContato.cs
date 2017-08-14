@@ -17,6 +17,10 @@ public class NavContato : MonoBehaviour {
     public Sprite mensajeOn;
     public Sprite mensajeOff;
 
+    public GameObject groupMessage;
+    public GameObject groupContact;
+
+
     void Start () {
 		
 	}
@@ -31,6 +35,8 @@ public class NavContato : MonoBehaviour {
         contacto.transform.localScale = Vector3.one* scaleOn;
         mensaje.sprite = mensajeOff;
         mensaje.transform.localScale = Vector3.one * scaleOff;
+        groupContact.SetActive(true);
+        groupMessage.SetActive(false);
     }
 
     public void BTN_Mensaje()
@@ -39,6 +45,7 @@ public class NavContato : MonoBehaviour {
         contacto.transform.localScale = Vector3.one * scaleOff;
         mensaje.sprite = mensajeOn;
         mensaje.transform.localScale = Vector3.one * scaleOn;
-
+        groupContact.SetActive(false);
+        groupMessage.SetActive(true);
     }
 }

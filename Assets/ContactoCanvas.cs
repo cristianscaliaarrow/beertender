@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class ContactoCanvas : MonoBehaviour {
 
-	void Start () {
-		
-	}
-	
-	void Update () {
-		
-	}
-
+    
 
 }
