@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,14 +23,25 @@ public class Navigator : MonoBehaviour {
 	public Sprite contactoOn;
 	public Sprite contactoOff;
 
+    public GameObject pendingMessages;
+
+    int pending = 0;
+
 	public void Awake(){
 		contacto.image.sprite = screen == ScreenId.CONTACTO? contactoOn:contactoOff;
 		premios.image.sprite = screen == ScreenId.PREMIOS? premiosOn:premiosOff;
 		beertenders.image.sprite = screen == ScreenId.BEERTENDERS? beertendersOn:beertendersOff;
 		rankin.image.sprite = screen == ScreenId.RANKING? rankingOn:rankingOff;
+        ShowPendingMessages();
 	}
 
-	public void BTN_Rankin(){
+    private void ShowPendingMessages()
+    {
+        pendingMessages.SetActive(pending != 0);
+        pendingMessages.GetComponentInChildren<Text>().text = pending + "";
+    }
+
+    public void BTN_Rankin(){
 		ScenesClass.ShowRanking (User.currentRol);
 	}
 
