@@ -25,7 +25,7 @@ public class Navigator : MonoBehaviour {
 
     public GameObject pendingMessages;
 
-    int pending = 0;
+    int pending = 1;
 
 	public void Awake(){
 		contacto.image.sprite = screen == ScreenId.CONTACTO? contactoOn:contactoOff;
