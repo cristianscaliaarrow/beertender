@@ -1,27 +1,41 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScenesClass{
-	
+	//change Between rol Type
 	public static void ShowHome(Rol rol){
-		Debug.Log("GOTO Home FOR " + rol);
+        if (rol == Rol.MANAGER || rol == Rol.OWNER)
+            SceneManager.LoadScene("HomeOwner");
+        else
+            SceneManager.LoadScene("HomeStaff");
 	}
 
-	public static void ShowRanking(Rol rol){
-		Debug.Log("GOTO Ranking FOR " + rol);
-	}
+    public static void ShowPremios(Rol rol)
+    {
+        if (rol == Rol.OWNER)
+            SceneManager.LoadScene("PremiosOwner");
+        else if (rol == Rol.STAFF)
+            SceneManager.LoadScene("PremiosStaff");
+        else
+            SceneManager.LoadScene("PremiosManager");
+    }
+    //Commons Scenes
 
-	public static void ShowPremios(Rol rol){
-		Debug.Log("GOTO Premios FOR " + rol);
-	}
+    public static void ShowRanking(Rol rol){
+        SceneManager.LoadScene("Ranking");
+    }
 
 	public static void ShowBeerTender(Rol rol){
-		Debug.Log("GOTO BeerTender FOR " + rol);
-	}
+        if (rol == Rol.STAFF)
+            SceneManager.LoadScene("BeertenderStaff");
+        else
+            SceneManager.LoadScene("Beertender");
+    }
 
 	public static void ShowContacto(Rol rol){
-		Debug.Log("GOTO Contacto FOR " + rol);
-	}
+        SceneManager.LoadScene("Contacto");
+    }
 
 }
