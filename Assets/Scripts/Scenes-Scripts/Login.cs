@@ -28,4 +28,10 @@ public class Login : MonoBehaviour {
 	public bool ExecuteLogin(){
         return true;//usuario.text.ToLower() == "cristian";
 	}
+
+    public void OnChangeDropDownList()
+    {
+        Dropdown dd = GameObject.Find("Dropdown").GetComponent<Dropdown>();
+        type = (Rol)dd.value;
+    }
 }
