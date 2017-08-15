@@ -25,7 +25,6 @@ public class Navigator : MonoBehaviour {
 
     public GameObject pendingMessages;
 
-    int pending = 1;
 
 	public void Awake(){
 		contacto.image.sprite = screen == ScreenId.CONTACTO? contactoOn:contactoOff;
@@ -33,12 +32,14 @@ public class Navigator : MonoBehaviour {
 		beertenders.image.sprite = screen == ScreenId.BEERTENDERS? beertendersOn:beertendersOff;
 		rankin.image.sprite = screen == ScreenId.RANKING? rankingOn:rankingOff;
         ShowPendingMessages();
+        EventManager.AddEvent(EventId.UpdatePendingMessages, ShowPendingMessages);
 	}
 
     private void ShowPendingMessages()
     {
-        pendingMessages.SetActive(pending != 0);
-        pendingMessages.GetComponentInChildren<Text>().text = pending + "";
+        DynamicMessage.ReadPreviousMessages();
+        pendingMessages.SetActive(DynamicMessage.noReaded != 0);
+        pendingMessages.GetComponentInChildren<Text>().text = DynamicMessage.noReaded + "";
     }
 
     public void BTN_Rankin(){

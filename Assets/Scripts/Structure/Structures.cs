@@ -1,4 +1,6 @@
-﻿public class User{
+﻿using System.Collections.Generic;
+
+public class User{
 	public string mail;
 	public string dni;
 	public string nombre;
@@ -34,19 +36,27 @@ public class Premios{
 	public int sku;
 }
 
+public class ListMessages{
+    public List<Message> messages = new List<Message>();
+}
+
+[System.Serializable]
 public class Message
 {
-    string message;
-    bool readed;
+    public int id;
+    public string message;
+    public bool readed;
 
     public Message()
     {
 
     }
 
-    public Message(string str)
+    public Message(string message, bool readed,int id)
     {
-        this.message = str;
+        this.id = id;
+        this.message = message;
+        this.readed = readed;
     }
 }
 
